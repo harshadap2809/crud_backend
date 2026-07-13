@@ -52,14 +52,13 @@ app = FastAPI(title="Aviraa Inventory API")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-    "http://localhost:5173",
-    "https://frontend-pr.vercel.app"
-],
+        "http://localhost:5173",
+        "https://crud-frontend-rho-gules.vercel.app",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
 # ---------- 6. DEPENDENCY: Get DB Session ----------
 def get_db():
     db = SessionLocal()
