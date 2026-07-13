@@ -47,14 +47,11 @@ class ProductResponse(BaseModel):
         from_attributes = True
 
 # ---------- 5. FASTAPI APP & CORS ----------
-app = FastAPI(title="Aviraa Inventory API")
+app = FastAPI(title="Harshada's Inventory API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "https://crud-frontend-rho-gules.vercel.app",
-    ],
+    allow_origin_regex="https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
